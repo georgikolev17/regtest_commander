@@ -1,0 +1,11 @@
+docker run -d --name bitcoind-regtest \
+  -v bitcoin-regtest-data:/home/bitcoin/.bitcoin \
+  -p 127.0.0.1:18443:18443 \
+  bitcoin/bitcoin \
+  -printtoconsole \
+  -regtest=1 \
+  -server=1 \
+  -rpcbind=0.0.0.0 \
+  -rpcallowip=172.17.0.0/16 \
+  -rpcuser=bitcoinrpc \
+  -rpcpassword=bitcoinrpcpassword
